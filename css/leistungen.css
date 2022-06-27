@@ -1,0 +1,46 @@
+
+leistungen {
+  width:100%;
+}
+
+
+
+#leistungen {
+  display: flex;
+  flex-direction: column;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 60px;
+
+}
+
+.icon-row {
+display:flex;
+margin-left: auto;
+margin-right:auto;
+margin-bottom: 90px;
+}
+
+.icon-col {
+  width:350px;
+  text-align: center;
+  padding: 0 40px;
+}
+
+.icon-col img {
+  width:100px;
+}
+
+.icon-col p {
+  margin-bottom: 35px;
+  margin-top: 15px;
+}
+
+a.button {
+  background-color: #ECE13B;
+  padding: 6px 12px 7px ;
+  font-size: 16px;
+    text-transform: uppercase;
+    color: #000000;
+}

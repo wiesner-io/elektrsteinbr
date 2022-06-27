@@ -1,0 +1,53 @@
+
+.ueber {
+  width:100%;
+  padding-bottom: 50px;
+}
+
+
+
+#ueber {
+  display: flex;
+  flex-direction: column;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.content-row {
+display:flex;
+margin-bottom: 90px;
+}
+
+.content-col-35 {
+  width:35%;
+  text-align: center;
+}
+
+.content-col-65 {
+  width:65%;
+  text-align: center;
+  padding: 60px 70px 0 80px;
+  text-align: left;
+  vertical-align: middle;
+}
+
+
+
+.content-col-35 img {
+  height:auto;
+  width:100%;
+}
+
+.content-col-65 p {
+  margin-bottom: 50px;
+  margin-top: 40px;
+}
+
+.content-col-65 a.button {
+  background-color: #ECE13B;
+  padding: 12px 16px ;
+  font-size: 16px;
+    text-transform: uppercase;
+    color: #000000;
+}

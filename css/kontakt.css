@@ -1,0 +1,66 @@
+
+.kontakt {
+  width:100%;
+  background-color: #f2f2f2;
+  padding:100px 0;
+}
+
+
+
+#kontakt {
+  display: flex;
+  flex-direction: column;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.content-row-ktkt {
+display:flex;
+margin-bottom: 40px;
+}
+
+.content-col {
+  width:100%;
+  text-align: left;
+}
+
+.content-col-25 {
+  width:35%;
+  text-align: left;
+}
+
+.content-col-75 {
+  width:65%;
+  text-align: left;
+}
+
+
+
+.content-col-25 img {
+  height:auto;
+  width:100%;
+}
+
+.content-col-75 p {
+  margin-bottom: 50px;
+  margin-top: 40px;
+}
+
+.content-col-75 a.button {
+  background-color: #f2f2f2;
+  padding: 12px 16px ;
+  font-size: 16px;
+    text-transform: uppercase;
+    color: #000000;
+}
+
+h3.ktkt {
+  font-size: 25px;
+  margin-bottom: 20px;
+}
+
+p.ktkt {
+  line-height: 1.8;
+    margin-bottom: 40px;
+}

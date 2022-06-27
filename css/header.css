@@ -1,0 +1,27 @@
+
+
+header {
+  display:block;
+  height: 620px;
+  background-image: url("../presentation-leistungen-elektro-installation.jpg");
+  background-color: #ECE13B;
+
+}
+
+header p {
+  font-size: 1.55em;
+
+}
+
+header-inner {
+  display: flex;
+  align-items: center;
+  height:100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.header-content {
+  width:100%;
+}
