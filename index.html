@@ -263,31 +263,24 @@
 </div>
 
 
-
 <script>
+    document
+  .querySelector("form")
+  .addEventListener("submit", handleSubmit);
 
-$("#ajaxForm").submit(function(e){
+const handleSubmit = (e) => {
   e.preventDefault();
-  var action = $(this).attr("action");
-  $.ajax({
-    type: "POST",
-    url: action,
-    crossDomain: true,
-    data: new FormData(this),
-    dataType: "json",
-    processData: false,
-    contentType: false,
-    headers: {
-      "Accept": "application/json"
-    }
-  }).done(function() {
-     $('.success').addClass('is-active');
-  }).fail(function() {
-     alert('An error occurred! Please try again later.')
-  });
-});
-
-</script>
+  let myForm = document.getElementById("pizzaOrder");
+  let formData = new FormData(myForm);
+  fetch("/", {
+    method: "POST",
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    body: new URLSearchParams(formData).toString(),
+  })
+    .then(() => console.log("Form successfully submitted"))
+    .catch((error) => alert(error));
+};
+  </script>
 
 
   </body>
