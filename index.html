@@ -11,6 +11,10 @@
 <link rel="stylesheet" href="/css/ueber.css">
 <link rel="stylesheet" href="/css/kontakt.css">
 <link rel="stylesheet" href="/css/footer.css">
+<link rel="stylesheet" href="/css/modals.css">
+<link rel="stylesheet" href="/css/modalform.css">
+
+
 
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -30,14 +34,33 @@
 <img src="https://stbr.wiesner.io/wp-content/uploads/2020/10/ELEKSTBR_Logo-web-s.png" alt="">
   </div>
   <div class="nav-menu">
-    <a href="#">Leistungen</a>
-    <a href="#">Über uns</a>
-    <a href="#" class="nav-c2a">Kontaktieren sie uns!</a>
+    <a href="#leistungen">Leistungen</a>
+    <a href="#ueber-uns">Über uns</a>
+    <a href="#kontakt" class="nav-c2a">Kontaktieren sie uns!</a>
 
   </div>
 
   </nav-inner>
 </nav>
+
+
+<script>
+
+  const nav = document.querySelector('nav');
+let navTop = nav.offsetTop;
+
+function fixedNav() {
+  if (window.scrollY >= navTop) {
+    nav.classList.add('fixed');
+  } else {
+    nav.classList.remove('fixed');
+  }
+}
+
+window.addEventListener('scroll', fixedNav);
+
+</script>
+
 
 
     
@@ -63,8 +86,8 @@
 
   <h2 class="leistungen">Wir arbeiten auf zahlreichen Baustellen.</h2>
 
-    <leistungen>
 
+  <leistungen>
 
 <div id="leistungen">
 
@@ -73,14 +96,232 @@
             <img src="https://stbr.wiesner.io/wp-content/uploads/2022/02/altbau.png" alt="">
             <h3>Elektroinstallation</h3>
             <p>Wir sind ihr Ansprechpartner für Bauvorhaben oder Teilprojekte.</p>
-            <a class="button">Mehr Information</a>
+            <button id="myBtn">Mehr Information</button>
+
+            
+            <div id="myModal" class="modal">
+
+              
+
+
+<div class="modal-content">
+  <span class="close">&times;</span>
+
+
+<div class="row">
+    <div class="col-1">
+      <h2>Elektroinstallation</h2>
+      <p>Sie bauen Ihr Traumhaus, sanieren ein älteres Gebäude oder möchten Ihre bestehende Installation erweitern?</p>
+      <p>Wir stehen Ihnen von Beginn an zur Seite – egal ob im Privathaushalt oder gewerblichen Bereich. Wir beraten bei der Produktauswahl und installieren die gewünschte Technik zuverlässig und sicher.
+</p>
+
+        <div class="col-ul">
+          <ul>
+            <li> Neubau und Sanierung</li>
+            <li> Verteiler- und Anlagenbau</li>
+            <li> Wartungsdienstleistungen</li>
+            <li> SPS</li>
+          </ul>
+        </div>
+
+        <div class="col-ul">
+          <ul>
+            <li> Beleuchtungstechnik</li>
+            <li> Kleinaufträge</li>
+            <li> Verkauf & Service</li>
+            <li> Baustromkasten-Vermietung</li>
+          </ul>
+        </div>
+
+      </div>
+
+    <div class="col-2">
+      <h3>Moderne Elektrik vom Fachmann</h3>
+      <p>Vereinbaren Sie jetzt einen unverbindlichen Beratungstermin, füllen Sie dazu einfach das Kontaktformular aus. Wir melden uns schnellst möglich zurück.</p>
+
+      <div id="modalform">
+
+
+<form name="contact" method="POST" action="/success.html" data-netlify="true">
+
+  <input type="text" name="name" placeholder="Vor- und Nachname *" required>
+
+    <input type="text" name="telefon" placeholder="Telefon (für Rückfragen)">
+    <input type="email" name="email" placeholder="Ihre Email-Adresse *" required>
+
+
+  <select name="betreff">
+    <option value="a">– Bitte wählen –</option>
+    <option value="Elektroinstallation">Neubau</option>
+    <option value="Kommunikation">Kommunikation</option>
+    <option value="Smart Home">Smart Home</option>
+    <option value="Erneuerbare Energie">Erneuerbare Energie</option>
+  </select>
+
+  <textarea name="nachricht" rows="10" placeholder="Ihre Nachricht an uns..."></textarea>
+
+  <button type="submit">Anfrage senden</button>
+  <div class="success">Ihre Nachricht wurde erfolgreich versendet!</div>
+
+</form>
+
+</div>
+
+
+    </div>
+</div>
+
+</div>
+
+
+<script>
+
+  
+var modal = document.getElementById("myModal");
+
+
+var btn = document.getElementById("myBtn");
+
+
+var span = document.getElementsByClassName("close")[0];
+
+
+btn.onclick = function() {
+  modal.style.display = "flex";
+}
+
+
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
+</script>
+
+            </div>
+
+
+
+
           </div>
 
           <div class="icon-col">
             <img src="https://stbr.wiesner.io/wp-content/uploads/2022/02/netzwerk.png" alt="">
             <h3>Kommunikation</h3>
             <p>Zuverlässige Netzwerk- und Sicherheitstechnik für Ihr Zuhause.</p>
-            <a class="button">Mehr Information</a>
+            <button id="myBtn1">Mehr Information</button>
+
+            
+            <div id="myModal1" class="modal">
+
+              
+
+
+<div class="modal-content">
+  <span class="close">&times;</span>
+
+
+<div class="row">
+    <div class="col-1">
+      <h2>Kommunikation</h2>
+      <p>Schnelles Internet und fehlerfreier Datentransfer gelten heutzutage als selbstverständlich, daher ist eine zuverlässige Netzwerk- und Sicherheitstechnik ein Muss in jedem Haushalt.</p>
+      <p>Nach einer gemeinsamen Besichtigung vor Ort bestimmen wir Ihren Wünschen entsprechend die passende Lösung für Ihr Zuhause.
+</p>
+
+        <div class="col-ul">
+          <ul>
+            <li>Netzwerktechnik</li>
+            <li>Videoüberwachung</li>
+            <li>SAT-Anlagen</li>
+          </ul>
+        </div>
+
+        <div class="col-ul">
+          <ul>
+            <li>Sprechanlagen</li>
+            <li>Sicherheitstechnik</li>
+          </ul>
+        </div>
+
+      </div>
+
+    <div class="col-2">
+      <h3>Sicheres Zuhause gewünscht?</h3>
+      <p>Vereinbaren Sie jetzt einen unverbindlichen Beratungstermin, füllen Sie dazu einfach das Kontaktformular aus. Wir melden uns schnellst möglich zurück.</p>
+
+      <div id="modalform">
+
+
+<form name="contact" method="POST" action="/success.html" data-netlify="true">
+
+  <input type="text" name="name" placeholder="Vor- und Nachname *" required>
+
+    <input type="text" name="telefon" placeholder="Telefon (für Rückfragen)">
+    <input type="email" name="email" placeholder="Ihre Email-Adresse *" required>
+
+
+  <select name="betreff">
+    <option value="a">– Bitte wählen –</option>
+    <option value="Elektroinstallation">Neubau</option>
+    <option value="Kommunikation">Kommunikation</option>
+    <option value="Smart Home">Smart Home</option>
+    <option value="Erneuerbare Energie">Erneuerbare Energie</option>
+  </select>
+
+  <textarea name="nachricht" rows="10" placeholder="Ihre Nachricht an uns..."></textarea>
+
+  <button type="submit">Anfrage senden</button>
+  <div class="success">Ihre Nachricht wurde erfolgreich versendet!</div>
+
+</form>
+
+</div>
+
+
+    </div>
+</div>
+
+</div>
+
+
+<script>
+
+  
+var modal = document.getElementById("myModal1");
+
+
+var btn = document.getElementById("myBtn1");
+
+
+var span = document.getElementsByClassName("close")[0];
+
+
+btn.onclick = function() {
+  modal.style.display = "flex";
+}
+
+
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
+</script>
+
+            </div>
+
           </div>
 
       </div>
@@ -90,23 +331,236 @@
             <img src="https://stbr.wiesner.io/wp-content/uploads/2022/02/smart-home.png" alt="">
             <h3>Smart Home</h3>
             <p>Wir machen Ihr Zuhause intelligent – auch die bestehende Strominstallation.</p>
-            <a class="button">Mehr Information</a>
+            <button id="myBtn2">Mehr Information</button>
+
+            
+            <div id="myModal2" class="modal">
+
+              
+
+
+<div class="modal-content">
+  <span class="close">&times;</span>
+
+
+<div class="row">
+    <div class="col-1">
+      <h2>Smart Home / KNX</h2>
+      <p>Von unterwegs den Backofen vorheizen? Mit dem Smartphone das Licht und die Raumtemperatur regeln – egal von welchem Ort?</p>
+      <p>Kein Zukunfts-Hokuspokus, sondern Stand der Technik. Wir zeigen Ihnen sämtliche Möglichkeiten auf, egal ob Neubau oder zur Nachrüstung ihrer bestehenden Anlage.
+</p>
+
+        <div class="col-ul">
+          <ul>
+            <li>Intelligentes Licht</li>
+            <li>IP-basierte Überwachung</li>
+            <li>Rollladen-Steuerung</li>
+          </ul>
+        </div>
+
+        <div class="col-ul">
+          <ul>
+            <li>Temperatur-Regelung</li>
+            <li>Steuerung via Smartphone</li>
+            <li>Home Assistant Integration</li>
+          </ul>
+        </div>
+
+      </div>
+
+    <div class="col-2">
+      <h3>Ihr Zuhause soll intelligent werden?</h3>
+      <p>Vereinbaren Sie jetzt einen unverbindlichen Beratungstermin, füllen Sie dazu einfach das Kontaktformular aus. Wir melden uns schnellst möglich zurück.</p>
+
+      <div id="modalform">
+
+
+<form name="contact" method="POST" action="/success.html" data-netlify="true">
+
+  <input type="text" name="name" placeholder="Vor- und Nachname *" required>
+
+    <input type="text" name="telefon" placeholder="Telefon (für Rückfragen)">
+    <input type="email" name="email" placeholder="Ihre Email-Adresse *" required>
+
+
+  <select name="betreff">
+    <option value="a">– Bitte wählen –</option>
+    <option value="Elektroinstallation">Neubau</option>
+    <option value="Kommunikation">Kommunikation</option>
+    <option value="Smart Home">Smart Home</option>
+    <option value="Erneuerbare Energie">Erneuerbare Energie</option>
+  </select>
+
+  <textarea name="nachricht" rows="10" placeholder="Ihre Nachricht an uns..."></textarea>
+
+  <button type="submit">Anfrage senden</button>
+  <div class="success">Ihre Nachricht wurde erfolgreich versendet!</div>
+
+</form>
+
+</div>
+
+
+    </div>
+</div>
+
+</div>
+
+
+<script>
+
+  
+var modal = document.getElementById("myModal2");
+
+
+var btn = document.getElementById("myBtn2");
+
+
+var span = document.getElementsByClassName("close")[0];
+
+
+btn.onclick = function() {
+  modal.style.display = "flex";
+}
+
+
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
+</script>
+
+            </div>
+
           </div>
 
           <div class="icon-col">
             <img src="https://stbr.wiesner.io/wp-content/uploads/2022/02/solar.png" alt="">
             <h3>Erneuerbare Energie</h3>
             <p>Holen Sie mit uns das Beste heraus – mit eigenem, grünen Strom.</p>
-            <a class="button">Mehr Information</a>
-          </div>
+            <button id="myBtn3">Mehr Information</button>
+
+            
+            <div id="myModal3" class="modal">
+
+              
+
+
+<div class="modal-content">
+  <span class="close">&times;</span>
+
+
+<div class="row">
+    <div class="col-1">
+      <h2>Erneuerbare Energie</h2>
+      <p>Der Klimawandel und stetig steigende Energiepreise stellen ein zentrales Problem unserer modernen Gesellschaft dar.</p>
+      <p>Egal ob Elektromobiliät, Photovoltaik oder Heizungsoptimierung – wir holen gemeinsam mit Ihnen das Optimum aus Ihrem grünen Strom heraus.
+</p>
+
+        <div class="col-ul">
+          <ul>
+            <li>Photovoltaik-Anlage</li>
+            <li>Heizungsoptimierung</li>
+            <li>Wärmepumpen</li>
+          </ul>
+        </div>
+
+        <div class="col-ul">
+          <ul>
+            <li>E-Mobilität</li>
+            <li>Wallbox für Privat & Gewerbe</li>
+            <li>Schnellladestationen</li>
+          </ul>
+        </div>
 
       </div>
 
+    <div class="col-2">
+      <h3>Interesse an Nachhaltigkeit?</h3>
+      <p>Vereinbaren Sie jetzt einen unverbindlichen Beratungstermin, füllen Sie dazu einfach das Kontaktformular aus. Wir melden uns schnellst möglich zurück.</p>
+
+      <div id="modalform">
+
+
+<form name="contact" method="POST" action="/success.html" data-netlify="true">
+
+  <input type="text" name="name" placeholder="Vor- und Nachname *" required>
+
+    <input type="text" name="telefon" placeholder="Telefon (für Rückfragen)">
+    <input type="email" name="email" placeholder="Ihre Email-Adresse *" required>
+
+
+  <select name="betreff">
+    <option value="a">– Bitte wählen –</option>
+    <option value="Elektroinstallation">Neubau</option>
+    <option value="Kommunikation">Kommunikation</option>
+    <option value="Smart Home">Smart Home</option>
+    <option value="Erneuerbare Energie">Erneuerbare Energie</option>
+  </select>
+
+  <textarea name="nachricht" rows="10" placeholder="Ihre Nachricht an uns..."></textarea>
+
+  <button type="submit">Anfrage senden</button>
+  <div class="success">Ihre Nachricht wurde erfolgreich versendet!</div>
+
+</form>
+
+</div>
 
 
     </div>
+</div>
+
+</div>
+
+
+<script>
+
+  
+var modal = document.getElementById("myModal3");
+
+
+var btn = document.getElementById("myBtn3");
+
+
+var span = document.getElementsByClassName("close")[0];
+
+
+btn.onclick = function() {
+  modal.style.display = "flex";
+}
+
+
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
+</script>
+
+            </div>
+
+          </div>
+      </div>
+
+
+</div>
 
 </leistungen>
+
 
 
     <div class="ueber">
@@ -116,7 +570,7 @@
 
       <div class="content-row">
           <div class="content-col-35">
-            <img src="https://stbr.wiesner.io/wp-content/uploads/2022/02/elektriker.jpg" alt="">
+            <img src="https://elektrosteinbrecher.de/wp-content/uploads/2022/02/elektriker.jpg" alt="">
 
           </div>
 
@@ -149,7 +603,7 @@
       </div>
 
 
-  <div class="content-row">
+  <div class="content-row-ktkt">
           <div class="content-col-75">
 
 
@@ -157,7 +611,7 @@
             
 <link rel="stylesheet" href="/css/form.css">
 
-<form id="ajaxForm" action="https://getform.io/f/a4b1b109-3cf0-476a-b2f2-dd9be34680aa" method="POST">
+<form name="contact" method="POST" action="/success.html" data-netlify="true">
 
   <input type="text" name="name" placeholder="Vor- und Nachname *" required>
   <input type="email" name="email" placeholder="Ihre Email-Adresse *" required>
@@ -176,28 +630,6 @@
   <div class="success">Ihre Nachricht wurde erfolgreich versendet!</div>
 
 </form>
-		  
-		  
- <form name="contact" method="POST" action="/success.html" data-netlify="true">
-    <p>
-      <label>Your Name: <input type="text" name="name" /></label>
-    </p>
-    <p>
-      <label>Your Email: <input type="email" name="email" /></label>
-    </p>
-    <p>
-      <label>Your Role: <select name="role[]" multiple>
-        <option value="leader">Leader</option>
-        <option value="follower">Follower</option>
-      </select></label>
-    </p>
-    <p>
-      <label>Message: <textarea name="message"></textarea></label>
-    </p>
-    <p>
-      <button type="submit">Send</button>
-    </p>
-  </form>
 
 
           </div>
@@ -240,7 +672,7 @@
 
 
 
-            <img src="https://stbr.wiesner.io/wp-content/uploads/2020/10/ELEKSTBR_Logo-web-footer-w.png" alt="">
+            <img src="https://elektrosteinbrecher.de/wp-content/uploads/2020/10/ELEKSTBR_Logo-web-footer-w.png" alt="">
 
           </div>
 
@@ -261,6 +693,9 @@
 </div>
 
 </div>
+
+
+
 
 
   </body>

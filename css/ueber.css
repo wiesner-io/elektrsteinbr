@@ -14,7 +14,7 @@
   margin-right: auto;
 }
 
-.content-row {
+#ueber .content-row {
 display:flex;
 margin-bottom: 90px;
 }
